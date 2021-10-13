@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hello!</title>
+<style type="text/css">
+
+table{
+  border: 1px solid;
+  background-color:hotpink;
+  border-collapse: collapse;
+}
+.Table{
+  display: table;
+  width: 50%;
+  border: 1px solid;
+  background-color: hotpink;
+  border-collapse: collapse;
+}
+.thead{
+  display: table-header-group;
+}
+.tbody{
+display: table-row-group;
+}
+.tfoot{
+display: table-footer-group;
+}
+.row{
+  display: table-row;
+border: 1px solid;
+}
+.cell{
+  display: table-cell;
+  padding: 3px;
+  border: 1px solid;
+}
+.td{
+  display: table-cell;
+  padding: 3px;
+  border: 1px solid;
+  background-color: lightblue;
+}
+#tdi{
+  background-color: lightgreen;
+}
+.tf{
+  display: table-cell;
+  padding: 3px;
+  border: 1px solid;
+}
+td{
+  padding: 3px;
+  border: 1px solid;
+}
+th{
+  border: 1px solid;
+}
+  #f1{
+    background-color: lightblue;
+
+  }
+  .cb{
+    background-color: lightsalmon;
+  }
+  #f2{
+    background-color: lightgreen;
+  }
+</style>
+</head>
+<body>
+  <div class="Table">
+    <div class="thead">
+    <div class="row">
+      <div class="cell"> &nbsp;</div>
+      <div class="cell">&nbsp;</div>
+    </div>
+    </div>
+
+    <div class="tbody">
+       <div class="row">
+    <div class="td" id="tdi" style="background-color: firebrick;">Abarco</div>
+    <div class="td"> dos columnas </div>
+    </div>
+       <div class="row">
+    <div class="td">Juan</div>
+    <div class="td">Perez</div>
+    </div>
+       <div class="row">
+    <div class="td">Maria</div>
+    <div class="td">Perez</div>
+    </div>
+    </div>
+    <div class="tfoot">
+      <div class="row">
+    <div class="tf">Total1</div>
+    <div class="tf">Total2</div>
+    </div>
+    </div>
+  </div>
+  <table>
+     <thead>
+          <tr id="f1">
+            <th>Que</th>
+            <th>hace?</th>   
+          </tr>
+     </thead>
+     <tbody class="cb">
+         <tr>
+          <td colspan="2">Abarco dos columnas</td>    
+         </tr>
+        <tr>
+         <td rowspan="2">Josue<br>Maria</td>
+         <td>Perez</td>    
+        </tr>
+        <tr>
+         
+         <td>Perez</td>    
+        </tr>
+        </tbody>
+        <tfoot id="f2">
+          <tr>
+            <td>total1</td>
+            <td>total2</td>   
+          </tr>  
+        </tfoot>
+   </table>
+ </body>
+ </html> 
