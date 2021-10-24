@@ -16,3 +16,6 @@ def indice(request):
 
 def indiceParam(request, nombre):
     return render(request, "principal/saludo.html", {"nombre": nombre.capitalize()})
+
+def indiceViernes(request):
+    return render(request, "principal/Viernes.html")
