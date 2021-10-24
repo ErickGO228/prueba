@@ -7,3 +7,6 @@ def holaDjango(request):
 
 def pepe(request):
     return HttpResponse("Hola pepe")
+
+def holaTu(request, nombre):
+    return HttpResponse(f"Hola {nombre.capitalize()}!")
