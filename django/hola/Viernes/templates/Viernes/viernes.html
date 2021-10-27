@@ -3,6 +3,11 @@
         <title>¿es viernes?</title>
     </head>
     <body>
-      <h1>{{Esviernes}}</h1> 
+       {% if Esviernes %}
+        <h1>Por fin es viernes! :D</h1>
+      {% else %}
+         <h1>Aun no :c</h1>
+      {% endif %}
+      
     </body>
 </html>
