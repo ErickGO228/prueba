@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "Viernes",
     "principal",
+    "Alarmas",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
