@@ -1,4 +1,4 @@
-{% extends alarmas/layout.html %}
+{% extends "alarmas/layout.html" %}
 {% block body %}
     <h1> Alarmas de el sistema </h1>
     <ul>
@@ -6,4 +6,5 @@
         <li>{{ alarma }}</li>
          {% endfor %}
     </ul>
+    <a href="{% url 'alarmas:v2' %}"> Agregar nueva alarma  </a>
 {% endblock %}
