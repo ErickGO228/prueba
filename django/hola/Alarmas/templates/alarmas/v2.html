@@ -2,7 +2,8 @@
 {% block body %}
    <h1>Nueva alarma</h1>
    <form action="{% url 'alarmas:index' %}" method="post">
-       <input type="text" name="alarma">
+       {% csrf_token %}
+      {{ cont_form }} 
        <input type="submit">
    </form>
    <a href="{% url 'alarmas:index' %}"> Ver alarmas </a>
