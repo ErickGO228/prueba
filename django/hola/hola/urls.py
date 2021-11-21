@@ -21,5 +21,6 @@ urlpatterns = [
     path("principal/", include("principal.urls")),
     path("Viernes/", include("Viernes.urls")),
     path("Alarmas/", include("Alarmas.urls")),
+     path("airline/", include("airline.urls")),
     
 ]
