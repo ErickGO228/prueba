@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Hola JavaScript</title>
+    <script type="text/JavaScript">
+        function toggle(){
+            let titulo = document.querySelector('h1');
+            if(titulo.innerHTML == 'Hola!'){
+               titulo.innerHTML = 'Adios!'
+            } else {
+                titulo.innerHTML = 'Hola!'
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <h1>Hola!</h1>
+    <button onclick="toggle();">Cambia!</button>
+</body>
+</html>
