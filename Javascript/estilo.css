@@ -2,7 +2,7 @@
     display: block;
     margin: 0 auto;
     padding: 20px;
-    background-color: #dc4c46;
+    background-color: #0569ff;
     width: 350px;
     height: 500px;
     border-radius: 25px;
@@ -13,6 +13,10 @@
     width: 70px;
     height: 70px;
     font-size: 25px;
+    background-color: transparent;
+    border-color: hsla(0, 0%, 0%, 0.39);
+    border-radius: 25px;
+    
 }
 
 #resultado{
