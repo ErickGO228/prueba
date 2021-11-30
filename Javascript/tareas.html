@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+ 
+                const enviar = document.querySelector('#enviar');
+                const nuevaTarea = document.querySelector('#tarea');
+ 
+                enviar.disabled = true;
+ 
+                nuevaTarea.onkeyup = () => {
+                    if (nuevaTarea.value.length > 0) {
+                        enviar.disabled = false;
+                    } else {
+                        enviar.disabled = true;
+                    }
+                }
+ 
+                document.querySelector('form').onsubmit = () => {
+ 
+                    const tarea = nuevaTarea.value;
+ 
+                    const li = document.createElement('li');
+                    li.innerHTML = tarea;
+ 
+                    document.querySelector('#tareas').append(li);
+ 
+                    nuevaTarea.value = '';
+ 
+                    enviar.disabled = true;
+ 
+                    // Evita que el envío del formulario recargue la página
+                    return false;
+                }
+            });
+        </script>
+        <title>Tareas</title>
+    </head>
+    <body>
+        <h1>Lista de Tareas</h1>
+        <ul id="tareas">
+        </ul>
+        <form>
+            <input id="tarea" autocomplete="off" autofocus placeholder="Nueva tarea" type="text">
+            <input id="enviar" type="submit">
+        </form>
+    </body>
+</html>
