@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pruebas con funciones </title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('select').onchange =  function () {
+                document.querySelector('h1').style.color = this.value;
+                //console.log(this.value);
+                }
+        });
+    </script>
+</head>
+<body>
+<h1>Mira cambio de color</h1>
+<select>
+    <option value="red">Rojo</option>
+    <option value="green">Verde</option>
+    <option value="blue">Azul</option>
+</select>
+</body>
+</html>

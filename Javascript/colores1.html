@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pruebas con funciones </title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('button').forEach((boton) => {
+                boton.onclick = () => {
+                    document.querySelector('h1').style.color = boton.dataset.color;
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<h1>Mira cambio de color</h1>
+<button data-color = "red">Rojo</button>
+<button data-color = "green">Verde</button>
+<button data-color = "blue">Azul</button>
+</body>
+</html>
