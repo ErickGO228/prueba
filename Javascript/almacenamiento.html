@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script>
+ 
+            if (!localStorage.getItem('contador')) {
+                localStorage.setItem('contador', 0);
+            }
+ 
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#contador').innerHTML = localStorage.getItem('contador');
+ 
+                document.querySelector('button').onclick = () => {
+                    let contador = localStorage.getItem('contador');
+                    contador++;
+ 
+                    document.querySelector('#contador').innerHTML = contador;
+                    localStorage.setItem('contador', contador);
+                }
+            });
+ 
+        </script>
+        <title>Almacenamiento Local</title>
+    </head>
+    <body>
+        <h1 id="contador"></h1>
+        <button>Incrementa!</button>
+    </body>
+</html>
