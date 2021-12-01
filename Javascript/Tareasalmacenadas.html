@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script>
+            // si no existe un valor para tareas, crea la key 
+            // de no existir en el localstorage, el compartimiento cuando
+            //busquemos el valor localstorage .getItem('tareas'); seria inesperado
+            if (!localStorage.getItem('tareas')) {
+                localStorage.setItem('tareas', "");
+            }
+ 
+            document.addEventListener('DOMContentLoaded', () => {
+                //obtener las tareas almacenadas en el LocalStorage
+                //y reemplaza el contenido de la lista no ordenada 
+                document.querySelector('#tareas').innerHTML = localStorage.getItem('tareas');
+
+                //Codigo para agregar a la lista una nueva tarea 
+                const enviar = document.querySelector('#enviar');
+                const nuevaTarea = document.querySelector('#tarea');
+                //Activa y desactiva el boton de submit del formulario
+                //cuando el contenido del input es vacio = disabled = true 
+                enviar.disabled = true;
+                  
+                nuevaTarea.onkeyup = () => {
+                    if(nuevaTarea.value.length > 0) {
+                        enviar.disabled = false;
+                    }else {
+                        enviar.disabled = true;
+                    }
+                }
+
+
+ 
+                document.querySelector('form').onsubmit = () => {
+                    // Codigo para agregar una tarea a la lista 
+                    const tarea = nuevaTarea.value;
+                    const li = document.createElement('li');
+                    nuevaTarea.value = '';
+                    enviar.disabled = true;
+                    // Se almacena (remplaza) el contenido de la lista en el localStorage 
+                    let tareas = document.querySelector('#tareas').innerHTML;
+                    localStorage.setItem('tareas', tareas);
+                    return false;
+ 
+                    
+                }
+            });
+ 
+        </script>
+        <title>Almacenamiento Local</title>
+    </head>
+    <body>
+        <ul id="tareas">
+        </ul>
+        <form>
+            <input id="tarea" autocomplete="off" autofocus placeholder="Nueva Tarea ">
+        </form>
+    </body>
+</html>
