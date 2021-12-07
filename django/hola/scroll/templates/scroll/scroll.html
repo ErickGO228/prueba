@@ -1,0 +1,50 @@
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>scroll</title>
+    <script> window.onscroll = () => {
+        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight){
+            document.querySelector('body').style.background = 'lime';
+        }else{
+            document.querySelector('body').style.background = 'white';
+        }
+    }
+    </script>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block content %}
+  <div class="infinite-container">
+    {% for number in numbers %}
+      <div class="infinite-item">{{ number }}</div>
+    {% endfor %}
+  </div>
+
+  {% if numbers.has_next %}
+    <a class="infinite-more-link" href="?page={{ numbers.next_page_number }}">More</a>
+  {% endif %}
+
+  <div class="loading" style="display: none;">
+    Loading...
+  </div>
+
+  <script>
+    var infinite = new Waypoint.Infinite({
+      element: $('.infinite-container')[0],
+      onBeforePageLoad: function () {
+        $('.loading').show();
+      },
+      onAfterPageLoad: function ($items) {
+        $('.loading').hide();
+      }
+    });
+  </script>
+{% endblock %}
+
+</body>
+</html>

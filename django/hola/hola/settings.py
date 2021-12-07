@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "principal",
     "Alarmas",
     "airline",
+    "scroll2",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
